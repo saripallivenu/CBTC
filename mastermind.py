@@ -1,6 +1,6 @@
-import random
+import random #for random numbers and operations
 
-def generate_number(length):
+def computer_number(length):
     """Generates a random number with the given length."""
     return ''.join(random.choices('0123456789', k=length))
 
@@ -11,8 +11,8 @@ def get_feedback(secret, guess):
     return correct_positions, correct_digits - correct_positions
 
 def play_game():
-    length = 2 # Length of the number to guess
-    secret_number = generate_number(length)
+    length = 1 # Length of the number to guess
+    secret_number = computer_number(length)
     attempts = 0
 
     print("Player 1 has set a secret number.")
