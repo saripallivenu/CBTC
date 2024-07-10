@@ -1,0 +1,31 @@
+import random #for generating random modules
+
+def user_choice():#for user choice 
+    user_input = input("Enter  your choice (rock, paper, scissors): ").lower()
+    while user_input not in ["rock", "paper", "scissors"]:
+        print("Invalid input, please try again.")
+        user_input = input("Enter choice (rock, paper, scissors): ").lower()
+    return user_input
+
+def computer_choice(): #for computer choice
+    return random.choice(["rock", "paper", "scissors"])
+
+def find_winner(user_choice, computer_choice): #for evaluating the winner
+    if user_choice == computer_choice:
+        return "It's a draw"
+    elif (user_choice == "rock" and computer_choice == "scissors") or \
+         (user_choice == "paper" and computer_choice == "rock") or \
+         (user_choice == "scissors" and computer_choice == "paper"):
+        return "You win the game"
+    else:
+        return "Computer wins!"
+
+def play_game():
+    print("Welcome to Rock, Paper, Scissors Game!")
+    user_choice = user_choice()
+    computer_choice = computer_choice()
+    print(f"\nYou chose: {user_choice}")
+    print(f"Computer chose: {computer_choice}")
+    print(find_winner(user_choice, computer_choice))
+
+play_game()
